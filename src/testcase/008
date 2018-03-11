@@ -1,0 +1,7 @@
+To:	9fans@cs.psu.edu
+Subject: Plan 9 beginner's questions
+
+I don't know how to shut down a file server or CPU
+server, but to safely shut down a terminal, type "^T^Tr".
+The connection to the file server is not cached, so
+there is no need to sync.

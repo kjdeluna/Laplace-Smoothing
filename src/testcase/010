@@ -1,0 +1,12 @@
+Three things for your general edification/amusement:
+
+For those interested, there is a program called 9x in
+ftp.cs.su.oz.au:/matty which provides a remote graphical connection
+to a Plan 9 machine on an X terminal.  The code needs to be cleaned up
+(please don't look at it too much if you get it -- I will be mortified
+if you do), and it doesn't support the polysegment primitive as yet,
+but it's useful if you can get it to work nevertheless.  You will
+need the libXg library from research.att.com (the one with the sam
+distribution) to build it.
+
+

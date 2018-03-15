@@ -78,14 +78,14 @@ public class ProbabilitySolver{
         BigDecimal spamWordCount;
         spamWord = new BigDecimal(Integer.toString(SolutionPanel.spam.getDict().get(word) + this.k));
         spamWordCount = new BigDecimal(Integer.toString(SolutionPanel.spam.getWordCount() + (this.k * (SolutionPanel.dictionarySize + this.newWordsCount))));
-        return spamWord.divide(spamWordCount, 10, RoundingMode.HALF_EVEN);
+        return spamWord.divide(spamWordCount, 20, RoundingMode.HALF_EVEN);
     }
     private BigDecimal computeProbWordGivenHam(String word){
         BigDecimal spamWord;
         BigDecimal spamWordCount;
         spamWord = new BigDecimal(Integer.toString(SolutionPanel.ham.getDict().get(word) + this.k));
         spamWordCount = new BigDecimal(Integer.toString(SolutionPanel.ham.getWordCount() + (this.k * (SolutionPanel.dictionarySize + this.newWordsCount))));
-        return spamWord.divide(spamWordCount, 10, RoundingMode.HALF_EVEN);
+        return spamWord.divide(spamWordCount, 20, RoundingMode.HALF_EVEN);
     }
 	private BigDecimal computeProbabilityMessageGivenSpam(){
 		String[] tokens;
@@ -140,7 +140,7 @@ public class ProbabilitySolver{
         BigDecimal P_Message = computeProbabilityMessageGivenSpam().multiply(P_Spam)
                                 .add(computeProbabilityMessageGivenHam().multiply(P_Ham));
         try{
-            return numerator.divide(P_Message, 10, RoundingMode.HALF_EVEN);
+            return numerator.divide(P_Message, 20, RoundingMode.HALF_EVEN);
         } catch(ArithmeticException e){
             return null;
         }       
